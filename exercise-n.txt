@@ -135,7 +135,44 @@ SHOW TABLES;
 3 rows in set (0.00 sec)
 
 Pt 2:
+
 USE decodemtl_addressbook_import;
 source data/import-account.sql;
 source data/import-addressbook.sql;
 source data/import-entry.sql;
+
+Exercise 8:
+
+Used:
+SELECT Account.email FROM Account WHERE id=63;
+
+Result:
++-------------------------------------------------+
+| email                                           |
++-------------------------------------------------+
+| consectetuer.rhoncus.Nullam@temporloremeget.org |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+Used:
+SELECT name FROM AddressBook WHERE id=3;
+
+Result:
++--------------------+
+| name               |
++--------------------+
+| Donec Incorporated |
++--------------------+
+1 row in set (0.00 sec)
+
+Used:
+SELECT createdOn FROM AddressBook WHERE name="Lorem Foundation";
+
+Result:
++---------------------+
+| createdOn           |
++---------------------+
+| 2016-06-26 02:43:41 |
+| 2015-05-04 14:28:16 |
++---------------------+
+2 rows in set (0.00 sec)
