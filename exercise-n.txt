@@ -118,3 +118,24 @@ DROP TABLE Account;
 Result:
 SELECT * FROM Account;
 ERROR 1146 (42S02): Table 'decodemtl_addressbook.Account' doesn't exist
+
+Exercise 7:
+CREATE DATABASE decodemtl_addressbook_import;
+source data/import-table-structure.sql;
+
+Result:
+SHOW TABLES;
++----------------------------------------+
+| Tables_in_decodemtl_addressbook_import |
++----------------------------------------+
+| Account                                |
+| AddressBook                            |
+| Entry                                  |
++----------------------------------------+
+3 rows in set (0.00 sec)
+
+Pt 2:
+USE decodemtl_addressbook_import;
+source data/import-account.sql;
+source data/import-addressbook.sql;
+source data/import-entry.sql;
