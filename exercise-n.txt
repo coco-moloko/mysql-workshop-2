@@ -102,3 +102,12 @@ UPDATE Account SET email="Jimiscool@email.com" WHERE id=1;
 UPDATE AddressBook SET name="Lauren Ipsom" WHERE id=1;
 
 UPDATE Entry SET type="home" WHERE id IN (1,2,3);
+
+Exercise 5:
+
+TRUNCATE table Entry;
+DESCRIBE Entry;
+
+Result:
+SELECT * FROM Entry;
+Empty set (0.01 sec)
