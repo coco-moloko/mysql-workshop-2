@@ -2,3 +2,66 @@
 
 Exercise 1:
 
+Used:
+use decodemtl_addressbook
+source data/import-table-structure.sql;
+Find + Replace decodemtl_addressbook_import to decodemtl_addressbook
+
+Result:
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables
+    -> ;
++----------------------------------------+
+| Tables_in_decodemtl_addressbook        |
++----------------------------------------+
+| Account                                |
+| AddressBook                            |
+| Entry                                  |
++----------------------------------------+
+3 rows in set (0.00 sec)
+
+Exercise 2:
+
+Account:
+Used:
+INSERT INTO Account SET id=NULL, email="jim@email.com", password="jimspass", createdOn="2017-01-24";
+SELECT * FROM Account;
+
+Result:
+SELECT * FROM Account;
++----+---------------+----------+---------------------+------------+
+| id | email         | password | createdOn           | modifiedOn |
++----+---------------+----------+---------------------+------------+
+|  1 | jim@email.com | jimspass | 0000-00-00 00:00:00 | NULL       |
++----+---------------+----------+---------------------+------------+
+1 row in set (0.00 sec)
+
+AddressBook:
+Used:
+INSERT INTO AddressBook SET id=NULL, accountId="123", name="Loren Ipsom Inc", createdOn="2017-01-20", modifiedOn="2017-01-23";
+
+RESULT:
+SELECT * FROM AddressBook;
++----+-----------+-----------------+---------------------+---------------------+
+| id | accountId | name            | createdOn           | modifiedOn          |
++----+-----------+-----------------+---------------------+---------------------+
+|  1 |       123 | Loren Ipsom Inc | 2017-01-20 00:00:00 | 2017-01-23 00:00:00 |
++----+-----------+-----------------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
