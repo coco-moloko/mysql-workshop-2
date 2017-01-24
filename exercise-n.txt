@@ -111,3 +111,10 @@ DESCRIBE Entry;
 Result:
 SELECT * FROM Entry;
 Empty set (0.01 sec)
+
+Exercise 6:
+DROP TABLE Account;
+
+Result:
+SELECT * FROM Account;
+ERROR 1146 (42S02): Table 'decodemtl_addressbook.Account' doesn't exist
