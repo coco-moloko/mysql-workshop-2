@@ -43,7 +43,30 @@ Used:
 INSERT INTO Account SET id=NULL, email="jim@email.com", password="jimspass", createdOn="2017-01-24";
 SELECT * FROM Account;
 
-Result:
+
+AddressBook:
+Used:
+INSERT INTO AddressBook SET id=NULL, accountId="123", name="Loren Ipsom Inc", createdOn="2017-01-20", modifiedOn="2017-01-23";
+
+
+Entry:
+INSERT INTO Entry SET id=NULL, 
+addressBookId="134", firstName="Loren", lastName="Ipsum", 
+birthday="1989-01-05", type="home", subtype="phone", 
+contentLineOne="514-625-6432", contentLineTwo=NULL;
+
+INSERT INTO Entry SET id=NULL, 
+addressBookId="134", firstName="Pizza", lastName="Face", 
+birthday="1970-01-12", type="work", subtype="phone", 
+contentLineOne="514-462-6432", contentLineTwo=NULL;
+
+INSERT INTO Entry SET id=NULL, 
+addressBookId="134", firstName="Mayor", lastName="McCheese", 
+birthday="1989-01-05", type="other", subtype="address", 
+contentLineOne="514-095-6452", contentLineTwo=NULL;
+
+Exercise 3:
+
 SELECT * FROM Account;
 +----+---------------+----------+---------------------+------------+
 | id | email         | password | createdOn           | modifiedOn |
@@ -52,11 +75,7 @@ SELECT * FROM Account;
 +----+---------------+----------+---------------------+------------+
 1 row in set (0.00 sec)
 
-AddressBook:
-Used:
-INSERT INTO AddressBook SET id=NULL, accountId="123", name="Loren Ipsom Inc", createdOn="2017-01-20", modifiedOn="2017-01-23";
 
-RESULT:
 SELECT * FROM AddressBook;
 +----+-----------+-----------------+---------------------+---------------------+
 | id | accountId | name            | createdOn           | modifiedOn          |
@@ -65,3 +84,13 @@ SELECT * FROM AddressBook;
 +----+-----------+-----------------+---------------------+---------------------+
 1 row in set (0.00 sec)
 
+
+Select * FROM Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+|  1 |           134 | Loren     | Ipsum    | 1989-01-05 00:00:00 | home  | phone   | 514-625-6432   | NULL           | NULL             | NULL            | NULL            |
+|  2 |           134 | Pizza     | Face     | 1970-01-12 00:00:00 | work  | phone   | 514-462-6432   | NULL           | NULL             | NULL            | NULL            |
+|  3 |           134 | Mayor     | McCheese | 1989-01-05 00:00:00 | other | address | 514-095-6452   | NULL           | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.01 sec)
