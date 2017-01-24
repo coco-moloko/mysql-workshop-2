@@ -281,3 +281,28 @@ SELECT COUNT(*) type, subtype FROM Entry WHERE type = "phone" OR subtype = "phon
 |  600 | phone   |
 +------+---------+
 1 row in set (0.00 sec)
+
+Advanced Part 3 
+Exercise 1
+
+Which Account owns the most Address Books?
+
+SELECT accountId, Count(*) FROM AddressBook GROUP BY accountId ORDER BY Count(*) DESC LIMIT 1;
+
++-----------+----------+
+| accountId | Count(*) |
++-----------+----------+
+|        14 |       19 |
++-----------+----------+
+1 row in set (0.00 sec)
+
+Which Address Book contains the most Entries?
+
+SELECT addressBookId, Count(*) FROM Entry GROUP BY addressBookId ORDER BY Count(*) DESC LIMIT 1;
+
++---------------+----------+
+| addressBookId | Count(*) |
++---------------+----------+
+|            37 |       52 |
++---------------+----------+
+1 row in set (0.00 sec)
